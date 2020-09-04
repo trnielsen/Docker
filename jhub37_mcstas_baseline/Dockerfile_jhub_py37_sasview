@@ -1,0 +1,22 @@
+
+FROM trnielsen/jhub37_mcstas_mcstasscript:latest
+
+USER $NB_USER
+
+
+
+RUN pip install \
+    sasmodels \
+    bumps \
+    lxml \
+    periodictable \
+    jupytext
+
+# Install Sasview
+# As written in pypi: https://pypi.org/project/sasmodels/
+RUN mkdir -p "/home/$NB_USER/.local/lib/python3.7/site-packages"
+COPY sasview-5.0.3/src/sas "/home/$NB_USER/.local/lib/python3.7/site-packages/sas"
+
+
+
+WORKDIR $HOME

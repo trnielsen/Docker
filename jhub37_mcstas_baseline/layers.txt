@@ -1,0 +1,7 @@
+jhub py 3.7
+mcstas
+mantid
+mcstasscript
+sasview
+nbextensions
+
