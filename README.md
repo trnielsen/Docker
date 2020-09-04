@@ -1,5 +1,5 @@
 # Docker
 
 
-A collection fo Docker files
+A collection fo Dockerfiles
 
