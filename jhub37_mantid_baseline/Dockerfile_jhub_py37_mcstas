@@ -1,0 +1,57 @@
+    
+FROM trnielsen/jhub37_mantid_mantid:latest
+
+USER root
+
+RUN apt-get update && apt-get install -y \
+    tzdata \
+    curl
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get --yes install keyboard-configuration
+
+
+SHELL [ "/bin/bash", "--login", "-c" ]
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    libssl1.1 \
+    libssl-dev \
+    vim \
+    wget
+
+# McStas
+RUN curl http://packages.mccode.org/debian/mccode.list > /etc/apt/sources.list.d/mccode.list
+
+RUN apt-get update && apt-get install -y \
+    coreutils \
+    emacs \
+    firefox \
+    fonts-liberation \
+    libgl1-mesa-glx \
+    libnexus1 \
+    libnexus-dev \
+    libopenmpi-dev \
+    libosmesa6 \
+    mcstas-suite-python \
+    mcstas-suite-perl \
+    mesa-utils \
+    openmpi-bin \
+    #python3-pip \
+    vim \
+    xbase-clients \
+    xdg-utils
+
+# Install McStas build from master (bff0930aee4e121874eb649cecf1f9227b802297)
+# For simplicity we just call it mcstas-2.7-beta
+COPY dist-beta  /tmp/dist-beta
+RUN dpkg -i /tmp/dist-beta/*.deb
+RUN rm -rf /tmp/dist-beta
+
+# Clean up - Remove .cache  directory
+RUN rm -r "/home/$NB_USER/.cache"
+
+
+USER $NB_UID
+
+WORKDIR $HOME
