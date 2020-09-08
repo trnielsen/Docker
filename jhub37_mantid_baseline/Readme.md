@@ -40,3 +40,7 @@ $ docker run --name test_notebooks -p 8888:8888 -v  ~/Desktop:/Desktop -it trnie
 * Sep. 08 2020 
 * Pushed jhub37_mantid_mantid to docker hub
 * https://hub.docker.com/repository/docker/trnielsen/jhub_mantid
+
+```console
+$ docker pull trnielsen/jhub_mantid:latest
+```
