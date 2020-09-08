@@ -35,3 +35,12 @@ $ time docker build -t trnielsen/jhub37_mcstas_notebooks -f Dockerfile_jhub_py37
 $ docker run --name test_notebooks -p 8888:8888 -v  ~/Desktop:/Desktop -it trnielsen/jhub37_mcstas_notebooks
 ```
 
+# Docker Hub
+* Sep. 08 2020 
+* Pushed jhub37_mcstas_mcstas to docker hub
+* https://hub.docker.com/repository/docker/trnielsen/jhub_mcstas
+
+```console
+$ docker pull trnielsen/jhub_mcstas:latest
+```
+
