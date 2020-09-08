@@ -35,3 +35,8 @@ $ time docker build -t trnielsen/jhub37_mantid_notebooks -f Dockerfile_jhub_py37
 ```console
 $ docker run --name test_notebooks -p 8888:8888 -v  ~/Desktop:/Desktop -it trnielsen/jhub37_mantid_notebooks
 ```
+
+# Docker Hub
+* Sep. 08 2020 
+* Pushed jhub37_mantid_mantid to docker hub
+* https://hub.docker.com/repository/docker/trnielsen/jhub_mantid
