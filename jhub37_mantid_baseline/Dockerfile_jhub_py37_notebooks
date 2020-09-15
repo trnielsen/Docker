@@ -2,17 +2,9 @@
 FROM trnielsen/jhub37_mantid_nbextensions:latest
 
 
-USER $NB_USER
-
-
-RUN mkdir -p "/home/$NB_USER/dram_demo"
-ADD Demo "/home/$NB_USER/dram_demo"
-
-
 USER root
-RUN chown -R "$NB_USER" \
-      "/home/$NB_USER/dram_demo"
 
+COPY Demo /tmp/DRAM_DEMO 
 
 USER $NB_USER
 WORKDIR $HOME
