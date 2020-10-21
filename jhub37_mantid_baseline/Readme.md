@@ -12,8 +12,9 @@
 | 3.  | McStas  |   | Dockerfile_jhub_py37_mcstas |   | trnielsen/jhub37_mantid_mcstas  |   |
 | 4.  | McStasScript  |   |  Dockerfile_jhub_py37_mcstasscript |   |  trnielsen/jhub37_mantid_mcstasscript |   |
 | 5.  | SasView  |   |  Dockerfile_jhub_py37_sasview |   | trnielsen/jhub37_mantid_sasview  |   |
-| 6  |  NB ext |   |  Dockerfile_jhub_py37_nbextensions |   |  trnielsen/jhub37_mantid_nbextensions |   |
-| 7.  | Notebooks  |   |  Dockerfile_jhub_py37_notebooks |   | trnielsen/jhub37_mantid_notebooks  |   |
+| 6.  | BornAgain  |   |  Dockerfile_jhub_py37_bornagain |   | trnielsen/jhub37_mantid_bornagain  |   |
+| 7  |  NB ext |   |  Dockerfile_jhub_py37_nbextensions |   |  trnielsen/jhub37_mantid_nbextensions |   |
+| 8.  | Notebooks  |   |  Dockerfile_jhub_py37_notebooks |   | trnielsen/jhub37_mantid_notebooks  |   |
 
 # Docker images and sizes
 | Nr.  | Docker image  |  tag | ID image   |  CREATED | SIZE  |   |
@@ -23,8 +24,13 @@
 | 3.  |  trnielsen/jhub37_mantid_mcstas | latest   | d25a2eaf21ac  | 46 hours ago  | 4.2GB  |   |
 | 4.  |  trnielsen/jhub37_mantid_mcstasscript | latest   | 045c07bc01a  | 46 hours ago |  4.21GB |   |
 | 5.  |  trnielsen/jhub37_mantid_sasview | latest   | 04dde0a1af39  | 46 hours ago |  4.32GB |   |
-| 6.  |  trnielsen/jhub37_mantid_nbextensions | latest   | 0f323f61c1cd  | 46 hours ago  | 4.37GB  |   |
-| 7.  | trnielsen/jhub37_mantid_notebooks  | latest   | 0c3b41270de1  | 46 hours ago  | 4.67GB  |   |
+| 6.  |  trnielsen/jhub37_mantid_bornagain | latest   | d4dde0a1af39  | 46 hours ago |  4.34GB |   |
+| 7.  |  trnielsen/jhub37_mantid_nbextensions | latest   | 0f323f61c1cd  | 46 hours ago  | 4.37GB  |   |
+| 8.  | trnielsen/jhub37_mantid_notebooks  | latest   | 0c3b41270de1  | 46 hours ago  | 4.67GB  |   |
+
+# Dependencies 
+* We use a build of McStas
+* We use a build of BornAgain
 
 # Build
 ```console

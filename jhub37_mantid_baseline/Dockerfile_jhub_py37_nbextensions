@@ -1,5 +1,5 @@
 
-FROM trnielsen/jhub37_mantid_sasview:latest
+FROM trnielsen/jhub37_mantid_bornagain:latest
 
 
 USER root
