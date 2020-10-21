@@ -1,5 +1,5 @@
 # Ordering of Docker layers
-## McStas is the base line
+## Mantid is the base line
 * Here we assume the McStas release cycle is changing faster than Mantid
 * In other words we do not need the bleading edge of Mantid/Scipp
 
