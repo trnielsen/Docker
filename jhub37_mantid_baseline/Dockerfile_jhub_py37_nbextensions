@@ -5,11 +5,13 @@ FROM trnielsen/jhub37_mantid_bornagain:latest
 USER root
 # Jupyter NB extetions
 RUN pip install jupyter_contrib_nbextensions
+RUN pip install nbgitpuller
 RUN jupyter contrib nbextension install 
 
 
 
 # enable the Nbextensions
+RUN jupyter serverextension enable --py nbgitpuller
 RUN jupyter nbextension enable contrib_nbextensions_help_item/main
 RUN jupyter nbextension enable autosavetime/main
 #RUN jupyter nbextension enable codefolding/main
