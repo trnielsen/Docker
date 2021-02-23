@@ -1,0 +1,37 @@
+
+FROM trnielsen/jhub37_ikon20:latest
+
+USER $NB_USER
+
+
+# From: https://github.com/scipp/scipp/blob/master/scipp-jupyter-demo.Dockerfile
+# Install Scipp and dependencies
+RUN conda install --yes \
+      -c conda-forge \
+      -c scipp/label/dev \
+      python=3.7 \
+      python-configuration \
+      mantid-framework \
+      ipython \
+      ipywidgets \
+      pyyaml \
+      Pillow \
+      pythreejs \
+      ipympl \
+      matplotlib=3.2.2 \
+      pytest \
+      ipyvolume \
+      traitlets=4.3.3 \
+      numpy \
+      tbb \
+      appdirs \
+      scipp \
+      scippwidgets && \
+    conda clean -afy
+
+# Avoid weird tornado AttributeError
+RUN pip install --upgrade nbconvert
+
+
+
+WORKDIR $HOME
