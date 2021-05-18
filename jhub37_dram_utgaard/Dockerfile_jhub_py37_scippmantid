@@ -1,0 +1,49 @@
+
+FROM trnielsen/jhub37_dram_base_mcstasscript:latest
+
+
+USER $NB_USER
+
+
+# From: https://github.com/scipp/scipp/blob/master/scipp-jupyter-demo.Dockerfile
+# Install Scipp and dependencies
+
+#RUN conda update -n base conda --yes
+#RUN conda clean --all
+#RUN conda install --no-deps --yes \
+
+
+# See https://github.com/scipp/scippneutron/blob/main/docs/environments/scippneutron-latest.yml
+
+
+RUN conda install --yes \
+      -c conda-forge \
+      h5py \
+      ipympl \
+      ipython \
+      ipywidgets \
+      jupyterlab \
+      jupyterlab_widgets \
+      jupyter_nbextensions_configurator \
+      matplotlib-base \
+      nodejs \
+      python-confluent-kafka \
+      pythreejs \
+      scipp/label/dev::mantid-framework \
+      scipp/label/dev::scippneutron \
+      scipp/label/dev::ess \
+      scipp::scipp && \
+    conda clean -afy
+
+# Pip
+RUN pip install ess-streaming-data-types
+
+# Avoid weird tornado AttributeError
+#RUN pip install --upgrade nbconvert
+
+#RUN conda install python=3.7.9
+
+
+#RUN conda update -n base conda --yes
+
+WORKDIR $HOME

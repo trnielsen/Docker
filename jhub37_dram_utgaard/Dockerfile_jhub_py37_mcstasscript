@@ -1,0 +1,14 @@
+
+FROM trnielsen/jhub37_dram_base_sasview:latest
+
+USER $NB_USER
+
+# Install McStasScript and dependencies
+RUN pip install mcstasscript
+
+# Change McStas path
+USER root
+COPY configuration.yaml  /opt/conda/lib/python3.7/site-packages/mcstasscript
+
+USER $NB_USER
+WORKDIR $HOME

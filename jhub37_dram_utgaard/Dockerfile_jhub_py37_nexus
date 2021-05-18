@@ -1,0 +1,34 @@
+    
+FROM trnielsen/jhub37_dram_base:latest
+
+USER root
+
+RUN apt-get update && apt-get install -y \
+    tzdata \
+    curl
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get --yes install keyboard-configuration
+
+
+SHELL [ "/bin/bash", "--login", "-c" ]
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    libssl1.1 \
+    libssl-dev \
+    vim \
+    wget
+
+# NeXus
+
+RUN apt-get update && apt-get install -y libnexus1 libnexus-dev
+
+
+# Clean up - Remove .cache  directory
+#RUN rm -r "/home/$NB_USER/.cache"
+
+
+USER $NB_UID
+
+WORKDIR $HOME
