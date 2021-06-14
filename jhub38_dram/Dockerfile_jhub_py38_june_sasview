@@ -1,0 +1,24 @@
+
+FROM trnielsen/jhub38_dram_june_ds_mcstasscript:latest
+
+USER root
+
+# Install Sasview
+# As written in pypi: https://pypi.org/project/sasmodels/
+COPY sasview-5.0.4 /opt/pylib/sasview-5.0.4
+
+# default command will launch Jupyter
+ENV PYTHONPATH /opt/pylib/sasview-5.0.4/src/sas:$PYTHONPATH
+
+
+USER $NB_USER
+
+RUN pip install \
+    sasmodels \
+    bumps \
+    lxml \
+    periodictable \
+    jupytext
+
+WORKDIR $HOME
+
