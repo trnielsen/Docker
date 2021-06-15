@@ -1,0 +1,32 @@
+
+FROM trnielsen/jhub38_dram_june_ds_sasview:latest
+
+
+USER root
+# Jupyter NB extetions
+RUN pip install jupyter_contrib_nbextensions
+RUN pip install nbgitpuller
+RUN jupyter contrib nbextension install 
+
+
+
+# enable the Nbextensions
+RUN jupyter serverextension enable --py nbgitpuller
+RUN jupyter nbextension enable contrib_nbextensions_help_item/main
+RUN jupyter nbextension enable autosavetime/main
+#RUN jupyter nbextension enable codefolding/main
+#RUN jupyter nbextension enable code_font_size/code_font_size
+#RUN jupyter nbextension enable code_prettify/code_prettify
+#RUN jupyter nbextension enable collapsible_headings/main
+#RUN jupyter nbextension enable comment-uncomment/main
+#RUN jupyter nbextension enable equation-numbering/main
+RUN jupyter nbextension enable execute_time/ExecuteTime 
+#RUN jupyter nbextension enable gist_it/main 
+#RUN jupyter nbextension enable hide_input/main 
+RUN jupyter nbextension enable spellchecker/main
+RUN jupyter nbextension enable toc2/main
+#RUN jupyter nbextension enable toggle_all_line_numbers/main
+
+USER $NB_UID
+
+WORKDIR $HOME
