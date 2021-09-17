@@ -1,0 +1,16 @@
+
+FROM trnielsen/jhub38_dram_sep2021_ds_sasview:latest
+     
+
+USER root
+
+
+
+
+
+RUN pip install nbgitpuller
+RUN pip install -U "nbclassic>=0.2.8"
+
+
+USER $NB_USER
+WORKDIR $HOME

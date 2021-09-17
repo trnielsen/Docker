@@ -1,0 +1,17 @@
+
+FROM trnielsen/jhub38_dram_sep2021_ds_sasview:latest
+     
+
+USER root
+
+
+
+RUN pip install jupyter_contrib_nbextensions
+RUN jupyter contrib nbextension install
+
+RUN pip install nbgitpuller
+RUN jupyter serverextension enable --py nbgitpuller --sys-prefix
+RUN jupyter server extension disable nbclassic
+
+USER $NB_USER
+WORKDIR $HOME

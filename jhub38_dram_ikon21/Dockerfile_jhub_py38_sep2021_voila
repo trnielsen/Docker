@@ -1,0 +1,17 @@
+FROM trnielsen/jhub38_dram_sep2021_ds_nexus:latest
+
+
+
+USER $NB_USER
+
+
+RUN conda install --yes -c conda-forge voila
+RUN conda install -c conda-forge bqplot
+RUN conda install -c conda-forge ipyvolume ipympl
+
+RUN jupyter serverextension enable voila --sys-prefix
+
+
+
+
+WORKDIR $HOME

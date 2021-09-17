@@ -1,0 +1,31 @@
+    
+FROM trnielsen/jhub38_dram_sep2021_ds_scipp:latest
+
+
+USER root
+
+RUN apt-get update && apt-get install -y \
+    tzdata \
+    curl
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get --yes install keyboard-configuration
+
+
+SHELL [ "/bin/bash", "--login", "-c" ]
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    libssl1.1 \
+    libssl-dev \
+    vim \
+    wget
+
+# NeXus
+RUN apt-get update && apt-get install -y libnexus1 libnexus-dev
+
+
+
+USER $NB_UID
+
+WORKDIR $HOME

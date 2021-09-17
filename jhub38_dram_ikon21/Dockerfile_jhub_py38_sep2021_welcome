@@ -1,0 +1,14 @@
+
+FROM trnielsen/jhub38_dram_sep2021_ds_voila:latest
+
+USER $NB_USER
+
+
+COPY Welcome.ipynb "/home/$NB_USER/Welcome.ipynb"
+
+
+
+USER $NB_USER
+
+WORKDIR $HOME
+
