@@ -1,0 +1,29 @@
+    
+FROM trnielsen/jhub38_dram_ikon21_mcstasscript:latest
+
+USER root
+
+
+
+
+SHELL [ "/bin/bash", "--login", "-c" ]
+
+
+# McCode
+RUN curl http://packages.mccode.org/debian/mccode.list > /etc/apt/sources.list.d/mccode.list
+    
+RUN apt-get update && apt-get install -y \
+    mcxtrace-suite-python
+
+
+# Change McCode path
+#USER root
+COPY configuration_mccode.yaml  /opt/conda/lib/python3.8/site-packages/mcstasscript/configuration.yaml
+
+# Clean up - Remove .cache  directory
+RUN rm -r "/home/$NB_USER/.cache"
+
+
+USER $NB_UID
+
+WORKDIR $HOME

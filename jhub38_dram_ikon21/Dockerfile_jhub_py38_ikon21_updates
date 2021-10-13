@@ -1,0 +1,18 @@
+FROM trnielsen/jhub38_dram_ikon21_nbextensions:latest
+
+
+
+USER $NB_USER
+
+
+RUN conda install --yes \
+     -c conda-forge \
+     pytest \
+     pytables \
+     openpyxl \
+     xlrd && \
+     conda clean -afy
+
+
+
+WORKDIR $HOME

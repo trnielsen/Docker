@@ -1,0 +1,25 @@
+FROM trnielsen/jhub38_dram_ikon21_scipp:latest
+
+
+USER $NB_USER
+
+
+RUN conda install --yes \
+      -c conda-forge \
+      ess-dmsc::ess-streaming-data-types \
+      h5py \
+      ipympl \
+      ipython \
+      ipywidgets \
+      jupyterlab \
+      jupyterlab_widgets \
+      jupyter_nbextensions_configurator \
+      matplotlib-base \
+      nodejs \
+      python-confluent-kafka \
+      pythreejs \
+      scipp/label/dev::mantid-framework \
+      scipp/label/dev::ess &&\
+    conda clean -afy
+
+WORKDIR $HOME

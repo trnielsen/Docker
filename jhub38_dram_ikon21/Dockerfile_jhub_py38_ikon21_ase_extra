@@ -1,0 +1,25 @@
+FROM trnielsen/jhub38_dram_ikon21_sasview:latest
+
+
+USER root 
+
+RUN apt-get update && apt-get install -y \
+    libxc-dev \
+    libblas-dev \
+    liblapack-dev
+
+
+
+USER $NB_USER
+
+ 
+RUN conda install --yes \
+     -c conda-forge \
+     scikit-learn \
+     nglview && \
+     conda clean -afy
+
+RUN pip install ase
+RUN pip install gpaw
+
+WORKDIR $HOME

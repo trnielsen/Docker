@@ -1,0 +1,13 @@
+FROM trnielsen/jhub38_dram_ikon21_ds:latest
+
+
+USER $NB_USER
+
+
+RUN conda install --yes \
+      -c conda-forge \
+      scipp::scippneutron=0.3.0 \
+      scipp::scipp && \
+    conda clean -afy
+
+WORKDIR $HOME
