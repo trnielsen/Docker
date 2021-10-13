@@ -1,4 +1,6 @@
 # Docker files for DRAM py38 September 2021 (IKON21 Python workshop)
+* This version was not used at the workshop
+
 
 # Two versions
 * Jupyter notebook classic
