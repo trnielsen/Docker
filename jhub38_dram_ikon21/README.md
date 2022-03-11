@@ -71,7 +71,7 @@ $ docker run --name test_notebooks -p 8888:8888 -v  ~/Desktop:/Desktop -it  trni
 * Not in this repo 
 * Just added for showing how to start Lab.
 ```console
-$ docker run --name test_notebooks -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v  ~/Desktop:/Desktop -it trnielsen trnielsen/jhub38_dram_sep2021_ds_nbgitpuller
+$ docker run --name test_notebooks -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v  ~/Desktop:/Desktop -it trnielsen/jhub38_dram_sep2021_ds_nbgitpuller
 ```
 
 
