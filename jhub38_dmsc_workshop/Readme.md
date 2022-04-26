@@ -34,7 +34,7 @@ $ docker push  trnielsen/jhub37_dram_ikon20_scipp_dev:latest
 
 # Docker Hub
 * April 26 2022 
-* Pushed trnielsen/jhub37_dram_ikon20_scipp_dev:latest to docker hub
+* Pushed trnielsen/jhub_py38_dmsc_workshop:latest to docker hub
 * https://hub.docker.com/r/trnielsen/jhub_py38_dmsc_workshop
 
 ```console
