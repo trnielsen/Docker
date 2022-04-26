@@ -1,0 +1,68 @@
+FROM trnielsen/jhub38_dram_ikon21_ds:latest
+
+
+USER $NB_USER
+
+#### SCIPP ####
+
+USER $NB_USER
+RUN conda install --yes \
+      -c conda-forge \
+      ess-dmsc::ess-streaming-data-types \
+      h5py \
+      ipympl \
+      ipython \
+      ipywidgets \
+      jinja2==3.0.3 \  
+      jupyterlab \
+      jupyterlab_widgets \
+      jupyter_nbextensions_configurator \
+      matplotlib-base \
+      nodejs \
+      python-confluent-kafka \
+      pythreejs \ 
+      mantid::mantid \
+      scipp::scippneutron \
+      scipp::scippnexus \
+      scipy \
+      scipp::ess \ 
+      anaconda::astropy \
+      nbgitpuller && \
+    conda clean -afy
+
+# ess needs astropy
+# nbgitpuller needed by jhub
+
+
+#---- as root ----#
+USER root
+#### Ubuntu dependencies ####
+RUN apt-get update && apt-get install -y \
+    curl \
+    unzip \
+    apt-utils  \
+    build-essential \
+    git \
+    wget \
+    tzdata \
+    libnexus1 \
+    libnexus-dev \
+    vim && \
+    apt-get -y upgrade 
+
+### Ubuntu dependencies in Mantid Conda ####
+RUN apt-get update && apt-get install -y \
+    libgl1
+
+
+#---- Back to user ----#
+USER $NB_USER
+#RUN pip install nbgitpuller
+
+
+
+# Clean up - Remove .cache  directory
+RUN rm -r "/home/$NB_USER/.cache"
+
+USER $NB_USER
+WORKDIR $HOME
