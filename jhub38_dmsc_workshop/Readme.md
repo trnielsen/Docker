@@ -2,6 +2,10 @@
 * 9 May - 10 May
 * Only scipp
 
+# Depends on
+* See https://github.com/trnielsen/Docker/tree/master/jhub38_dram_ikon21
+* See https://github.com/trnielsen/Docker/blob/master/jhub38_dram_ikon21/Dockerfile_from_docker_stacks_py38
+
 
 # Build
 ```console
