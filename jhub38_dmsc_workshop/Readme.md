@@ -9,19 +9,19 @@
 
 # Build
 ```console
-$ time docker build --no-cache -t trnielsen/jhub38_dram_ikon21_scipp -f Dockerfile_jhub_py38_ikon21_scipp .
+$ time docker build --no-cache -t trnielsen/dmsc_workshop_scipp -f Dockerfile_ikon21_scipp .
 ```
 
 # Run Jupyter classical 
 ```console
-$ docker run --name test_notebooks -p 8888:8888 -v  ~/Desktop:/Desktop -it  trnielsen/jhub38_dram_ikon21_updates_scipp
+$ docker run --name test_notebooks -p 8888:8888 -v  ~/Desktop:/Desktop -it  trnielsen/dmsc_workshop_scipp
 ```
 
 # Run Jupyter lab 
 * Not in this repo 
 * Just added for showing how to start Lab.
 ```console
-$ docker run --name test_notebooks -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v  ~/Desktop:/Desktop -it trnielsen/jhub38_dram_sep2021_ds_nbgitpuller
+$ docker run --name test_notebooks -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v  ~/Desktop:/Desktop -it trnielsen/dmsc_workshop_scipp
 ```
 
 # Tag
