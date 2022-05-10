@@ -26,11 +26,13 @@ RUN conda install --yes \
       scipp::scippnexus \
       scipy \
       scipp::ess \ 
+      pandas \
       python-graphviz \ 
       anaconda::astropy \
       nbgitpuller && \
     conda clean -afy
 
+# notebook 3 needs pandas for reading the cvs file
 # scippneutron needs conda install -c conda-forge python-graphviz
 # ess needs astropy
 # nbgitpuller needed by jhub
