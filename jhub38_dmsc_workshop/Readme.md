@@ -28,12 +28,12 @@ $ docker run --name test_notebooks -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v  ~/
 * Remember to avoide name clash
 * E.i. tagging should use a new name
 ```console
-$ docker tag 643d1b09b30e trnielsen/jhub37_dram_ikon20_scipp_dev:latest
+$ docker tag 3a06e9d2f728 trnielsen/jhub_py38_dmsc_workshop:latest
 ```
 # Push
 * Update repo on DockerHub
 ```console
-$ docker push  trnielsen/jhub37_dram_ikon20_scipp_dev:latest
+$ docker push trnielsen/jhub_py38_dmsc_workshop:latest
 ```
 
 # Docker Hub
